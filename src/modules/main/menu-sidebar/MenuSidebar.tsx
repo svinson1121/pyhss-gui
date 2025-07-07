@@ -49,6 +49,11 @@ export const MENU: IMenuItem[] = [
     icon: 'fas fa-search-dollar nav-icon',
     path: '/chargingrule'
   },
+  {
+    name: i18n.t('menusidebar.label.eir'),
+    icon: 'fas fa-database nav-icon',
+    path: '/eir'
+  },
   { name: 'Roaming',
     icon: 'fas fa-broom nav-icon',
     children: [
