@@ -45,3 +45,5 @@ Diameter Peers: Resolved issue with incorrect peer count; related API changes im
 
 Subscriber Wizard: Fixed issue where SQN (Sequence Number) was being left NULL.
 
+Added Support For EIR.
+

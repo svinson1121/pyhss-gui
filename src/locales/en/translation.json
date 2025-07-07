@@ -44,6 +44,10 @@
     "gatewayHead": "Gateway",
     "nbiotHead": "NB-IoT"
   },
+  "eir": {
+    "headAdd": "{{mode}} EIR",
+    "mode": "EIR operating mode"
+  },
   "auc": {
     "headAdd": "{{mode}} AUC",
     "setKeys": "Set keys"
@@ -99,6 +103,9 @@
   "inputFields": {
     "header": {
         "imsi": "IMSI",
+	"imei": "IMEI",
+	"regex_mode": "Matching Mode",
+	"match_response_code": "Response Type",
         "simVendor": "Vendor",
         "iccid": "ICCID",
         "esim": "eSim",
@@ -224,8 +231,8 @@
     },
     "options": {
       "nam": {
-        "0": "Packet and circuit",
-        "2": "Packet only"
+        "0": "Packet and circuit (PS+CS)",
+        "2": "Packet only (PS)"
       },
       "tftDirection": {
         "0": "Unspecified",

@@ -75,7 +75,7 @@ const EirAddItem = (props: { open: ReturnType<typeof Boolean>, handleClose: Retu
             <Grid item xs={4}>
               <InputField
                 required
-                value={state.eir}
+                value={state.imei}
                 onChange={handleChange}
                 id="imei"
                 label={i18n.t('inputFields.header.imei')}
