@@ -77,7 +77,7 @@ const Apn = () => {
 
   return (
     <div>
-      <ContentHeader title="APNs" />
+      <ContentHeader title="Access Point Name" />
       <section className="content">
         <div className="container-fluid">
           <div className="card">

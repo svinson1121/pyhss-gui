@@ -79,7 +79,7 @@ const SubscriberAddModal = (props: { open: boolean, handleClose: ReturnType<type
        aria-describedby="modal-modal-description"
      >
        <Box sx={style}>
-        <h3>{(edit?i18n.t('generic.edit'):i18n.t('generic.add'))} Subscriber</h3>
+	<h3>{i18n.t('subscriber.headAdd', {"mode": (edit?i18n.t('generic.edit'):i18n.t('generic.add'))})}</h3>
         <Box
           component="form"
           noValidate

@@ -140,7 +140,7 @@ const Auc = () => {
     
   return (
     <div>
-      <ContentHeader title={(aucSearch?'AUC':'AUCs')} />
+      <ContentHeader title={(aucSearch?'AUC':'Authentication Center')} />
       <section className="content">
         <div className="container-fluid">
           <div className="card">

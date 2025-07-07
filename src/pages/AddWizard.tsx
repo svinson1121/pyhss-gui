@@ -52,6 +52,7 @@ const aucTemplate = {
   "ki": "",
   "opc": "",
   "amf": "",
+  "sqn": 0,
   "iccid": "",
   "imsi": "",
   "batch_name": "",

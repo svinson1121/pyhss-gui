@@ -97,7 +97,7 @@ const MenuSidebar = () => {
           height={33}
           rounded
         />
-        <span className="brand-text font-weight-light">PYHSS</span>
+        <span className="brand-text font-weight-light">PYHSS-GUI</span>
       </Link>
       <div className="sidebar">
         <nav className="mt-2" style={{overflowY: 'hidden'}}>

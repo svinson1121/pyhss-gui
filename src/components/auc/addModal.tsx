@@ -90,7 +90,7 @@ const AucAddModal = (props: { open: boolean, handleClose: any, data: object, edi
         "misc1": state.misc1,
         "misc2": state.misc2,
         "misc3": state.misc3,
-        "misc4": state.misc4 
+        "misc4": state.misc4
       }
       if (!forceKeys)
         AucApi.update(data.auc_id, aucSaveTemplate).then((data) => {
@@ -134,7 +134,7 @@ const AucAddModal = (props: { open: boolean, handleClose: any, data: object, edi
        aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <h3>{(edit?i18n.t('general.edit'):i18n.t('general.add'))}</h3>
+	  <h3>{i18n.t('auc.headAdd', {"mode": (edit?i18n.t('generic.edit'):i18n.t('generic.add'))})}</h3>
           {edit && !forceKeys && <Button onClick={handleForceKeys}>{i18n.t('auc.setKeys')}</Button>}
           <Box
             component="form"

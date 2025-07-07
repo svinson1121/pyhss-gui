@@ -26,7 +26,7 @@ const Dashboard = () => {
       setSubsPcrf(String(Object.values(data.data).filter(item => (current - new Date(item.serving_pgw_timestamp) < 60 * 60 * 1000)).length));
     }))
     OamApi.diameterPeers().then((data => {
-      setDiameter(String(Object.values(data.data).filter(item => item.disconnectTimestamp === "").length));
+      setDiameter(String(Object.values(data.data).filter(item => item.LastDisconnectTimestamp === "").length));
     }))
   }, []);
 

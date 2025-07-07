@@ -59,7 +59,7 @@ const Tft = () => {
 
   return (
     <div>
-      <ContentHeader title="TFTs" />
+      <ContentHeader title="Traffic Flow Template" />
       <section className="content">
         <div className="container-fluid">
           <div className="card">

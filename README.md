@@ -30,3 +30,18 @@ Your app is ready to be deployed!
 
 ## Tnx to
 * https://github.com/erdkse/adminlte-3-react (Providing the base and template)
+
+
+
+Bug Fixes & Updates:
+
+ICCID Field: Enforced minimum length of 18 and maximum length of 20 characters.
+
+IMSI Field: Enforced fixed length of 15 digits.
+
+AMF Field: Corrected label to Authentication Management Field (thanks to @jmasterfunk).
+
+Diameter Peers: Resolved issue with incorrect peer count; related API changes implemented.
+
+Subscriber Wizard: Fixed issue where SQN (Sequence Number) was being left NULL.
+

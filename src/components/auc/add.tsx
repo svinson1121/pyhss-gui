@@ -18,6 +18,7 @@ const AucAddItem = (props: {
 
   React.useEffect(() => {
     onValidate('imsi', state.imsi);
+    onValidate('iccid', state.iccid);
     if (!edit) {
       onValidate('ki', state.ki);
       onValidate('opc', state.opc);
@@ -39,14 +40,16 @@ const AucAddItem = (props: {
       error = i18n.t('validator.onlyNumbers'); 
     else if (field==='imsi' && value.length < 15)
       error = i18n.t('validator.toShort');
+    else if (field==='imsi' && value.length > 0 && value.length > 15)
+      error = i18n.t('validator.toLong');
 
     if (field==='iccid' && value === '')
       error = i18n.t('validator.required');
     else if (field==='iccid' && !/^\d*$/.test(value))
       error = i18n.t('validator.onlyNumbers'); 
-    else if (field==='iccid' && value.length > 0 && value.length < 19)
+    else if (field==='iccid' && value.length > 0 && value.length < 18)
       error = i18n.t('validator.toShort');
-    else if (field==='iccid' && value.length > 0 && value.length > 19)
+    else if (field==='iccid' && value.length > 0 && value.length > 20)
       error = i18n.t('validator.toLong');
 
     if (!edit || forceKeys) {

@@ -17,15 +17,16 @@
     "label": {
       "dashboard": "Dashboard",
       "profile": "Profile",
-      "apn": "APNs",
-      "auc": "AUCs",
+      "apn": "APN",
+      "auc": "AUC",
       "subscriber":"Subscribers",
       "imssubscriber":"IMS Subscribers",
       "mainMenu": "Main Menu",
-      "tft": "TFTs",
+      "tft": "TFT",
       "chargingrule": "Charging Rules",
       "roamingnetwork": "Networks",
-      "roamingrule": "Rules"
+      "roamingrule": "Rules",
+      "eir": "EIR"
     }
   },
   "dashboard": {
@@ -44,6 +45,7 @@
     "nbiotHead": "NB-IoT"
   },
   "auc": {
+    "headAdd": "{{mode}} AUC",
     "setKeys": "Set keys"
   },
   "chargingRule": {
@@ -56,6 +58,7 @@
       "peer": "Peer"
   },
   "subscriber": {
+    "headAdd": "{{mode}} Subscriber",
     "mme": "MME",
     "realm": "Realm",
     "peer": "Peer"
@@ -171,11 +174,11 @@
         "sh_profile": "SH Profile",
         "ki": "Ki",
         "opc": "oPC",
-        "esim": "is this a eSim?",
+        "esim": "is this an eSim?",
         "iccid": "Integrated Circuit Card Identifier",
         "simVendor": "Sim vendor",
         "batch": "Batch name",
-        "amf": "Access and Mobility Management Function",
+        "amf": "Authentication Management Field",
         "lpa": "Local Profile Assistant URL for activating eSIM",
         "pin1":"User PIN 1",
         "puk1":"User PUK 1",
@@ -189,9 +192,9 @@
         "misc2":"Misc 2",
         "misc3":"Misc 3",
         "misc4":"Misc 4",
-        "nam": "Network Access Mode [3GPP TS. 123 008 2.1.1.2]",
-        "pgw": "IP/FQDN of the PGW",
-        "sgw": "IP/FQDN of the sGW",
+        "nam": "Network Access Mode",
+        "pgw": "IP of the PGW-C",
+        "sgw": "IP of the SGW-C",
         "chargingCharacteristics": "Charging characteristics",
         "qci": "QoS Class Identifier",
         "ambr_dl": "Agregated Maximum Bit Rate download:",
