@@ -21,7 +21,7 @@ const EirItem = (props: { row: ReturnType<typeof Object>, deleteCallback: Return
 	<TableCell>{match_response_code[row.match_response_code]}</TableCell>
         <TableCell>
           <Button onClick={() => openEditCallback(row)}><i className="fas fa-edit"></i></Button>
-          <DeleteDialog id={row.tft_id} callback={deleteCallback}/>
+          <DeleteDialog id={row.eir_id} callback={deleteCallback}/>
         </TableCell>
       </TableRow>
     </React.Fragment>
