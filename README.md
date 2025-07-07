@@ -33,7 +33,7 @@ Your app is ready to be deployed!
 
 
 
-Bug Fixes & Updates:
+## Bug Fixes & Updates:
 
 ICCID Field: Enforced minimum length of 18 and maximum length of 20 characters.
 
