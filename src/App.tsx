@@ -20,6 +20,7 @@ import Tft from '@pages/Tft';
 import ChargingRule from '@pages/ChargingRule';
 import RoamingNetwork from '@pages/RoamingNetwork';
 import RoamingRule from '@pages/RoamingRule';
+import Eir from  '@pages/Eir';
 
 import AddWizard from '@pages/AddWizard';
 
@@ -101,6 +102,7 @@ const App = () => {
             <Route path="/imssubscriber" element={<IMSSubscriber />} />
             <Route path="/tft" element={<Tft />} />
             <Route path="/chargingrule" element={<ChargingRule />} />
+	    <Route path="/eir" element={<Eir />} />
             <Route path="/roamingnetwork" element={<RoamingNetwork />} />
             <Route path="/roamingrule" element={<RoamingRule />} />
             <Route path="/addwizard" element={<AddWizard />} />

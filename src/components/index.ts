@@ -3,6 +3,8 @@ import SmallBox from './small-box/SmallBox';
 import MenuItem from './menu-item/MenuItem';
 import ApnItem from './apn/item';
 import ApnAddItem from './apn/add';
+import EirItem from './eir/item';
+import EirAddItem from './eir/add';
 import SubscriberItem from './subscriber/tableItem';
 import SubscriberAddItem from './subscriber/add';
 import SubscriberAddModal from './subscriber/addModal';
@@ -45,6 +47,8 @@ export {
     MenuItem,
     ApnItem,
     ApnAddItem,
+    EirItem,
+    EirAddItem,
     SubscriberItem,
     SubscriberAddItem,
     SubscriberAddModal,
