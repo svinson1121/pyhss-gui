@@ -1,8 +1,5 @@
-
-[![Build and publish](https://github.com/zarya/pyhss-gui/actions/workflows/build-docker-actions.yaml/badge.svg)](https://github.com/zarya/pyhss-gui/actions/workflows/build-docker-actions.yaml)
-
 # Docker
-`docker run -p 8999:80 ghcr.io/zarya/pyhss-gui:master`   < not the version in this repo 
+`docker pull ghcr.io/svinson1121/pyhss-gui:latest`   
 
 After the container is started you can access the webinterface on port 8999 (http://localhost:8999)
 
