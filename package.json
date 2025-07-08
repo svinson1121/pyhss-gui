@@ -1,14 +1,14 @@
 {
   "name": "pyhss-gui",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "devpub": "vite --host 0.0.0.0",
-    "build": "tsc && vite build --force",
+    "build": "tsc && vite build ",
     "tsc": "tsc",
-    "justbuild": "vite build --force",
+    "justbuild": "vite build ",
     "preview": "vite preview",
     "format": "prettier-eslint $PWD/'src/**/*.{js,json}' --write",
     "lint": "eslint src/**/*.js"

@@ -17,6 +17,10 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+bind to localhost only
+
+### `npm run devpub`
+same as `npm run dev` but bind to 0.0.0.0
 
 
 ### `npm run justbuild`
