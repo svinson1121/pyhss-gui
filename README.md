@@ -43,7 +43,8 @@ AMF Field: Corrected label to Authentication Management Field (thanks to @jmaste
 
 Diameter Peers: Resolved issue with incorrect peer count; related API changes implemented.
 
-Subscriber Wizard: Fixed issue where SQN (Sequence Number) was being left NULL.
+Subscriber Wizard: Fixed issue where SQN (Sequence Number) was left NULL.
 
-Added Support For EIR.
+EIR Support: Added initial support for Equipment Identity Register.
 
+OAM Deregistration on Disable: When a subscriber is changed to disabled and Save is clicked, the OAM Deregister API is triggered for that IMSI — effectively removing the device from the network.

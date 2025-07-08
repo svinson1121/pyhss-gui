@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import i18n from '@app/utils/i18n';
 import {SubscriberAddItem,SaveButtons} from '@components';
 
-import {SubscriberApi, OamApi} from '../../services/pyhss';
+import {SubscriberApi} from '../../services/pyhss';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -37,30 +37,22 @@ const SubscriberAddModal = (props: { open: boolean, handleClose: ReturnType<type
   const handleLocalClose = () => {
     handleClose();
   }
-  const handleSave = async () => {
-   if (edit && state.enabled === false && state.imsi) {
-    try {
-      await OamApi.deregister(state.imsi);
-      console.log(`Deregistered IMSI: ${state.imsi}`);
-    } catch (err) {
-      console.error(`Failed to deregister IMSI: ${state.imsi}`, err);
-    }
-  }
 
-  const item = {
-    "imsi": state.imsi,
-    "enabled": state.enabled,
-    "roaming_enabled": state.roaming_enabled,
-    "roaming_rule_list": state.roaming_rule_list,
-    "auc_id": state.auc_id,
-    "default_apn": state.default_apn,
-    "apn_list": state.apn_list,
-    "msisdn": state.msisdn,
-    "ue_ambr_dl": state.ue_ambr_dl,
-    "ue_ambr_ul": state.ue_ambr_ul,
-    "nam": state.nam,
-    "subscribed_rau_tau_timer": state.subscribed_rau_tau_timer
-  };
+  const handleSave = () => {
+    const item = {
+      "imsi": state.imsi,
+      "enabled": state.enabled,
+      "roaming_enabled": state.roaming_enabled,
+      "roaming_rule_list": state.roaming_rule_list,
+      "auc_id": state.auc_id,
+      "default_apn": state.default_apn,
+      "apn_list": state.apn_list,
+      "msisdn": state.msisdn,
+      "ue_ambr_dl": state.ue_ambr_dl,
+      "ue_ambr_ul": state.ue_ambr_ul, 
+      "nam": state.nam,
+      "subscribed_rau_tau_timer": state.subscribed_rau_tau_timer 
+    };
 
     if (edit) {
       SubscriberApi.update(data.subscriber_id, item).then((data) => {
