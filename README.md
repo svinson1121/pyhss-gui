@@ -2,7 +2,7 @@
 [![Build and publish](https://github.com/zarya/pyhss-gui/actions/workflows/build-docker-actions.yaml/badge.svg)](https://github.com/zarya/pyhss-gui/actions/workflows/build-docker-actions.yaml)
 
 # Docker
-`docker run -p 8999:80 ghcr.io/zarya/pyhss-gui:master`
+`docker run -p 8999:80 ghcr.io/zarya/pyhss-gui:master`   < not the version in this repo 
 
 After the container is started you can access the webinterface on port 8999 (http://localhost:8999)
 
@@ -49,5 +49,5 @@ EIR Support: Added initial support for Equipment Identity Register.
 
 OAM Deregistration on Disable: When a subscriber is changed to disabled and Save is clicked, the OAM Deregister API is triggered for that IMSI — effectively removing the device from the network.
 
-- Resolved issue where clicking "Add" after editing a record would reopen the last edited entry instead of a blank form.
+Resolved issue where clicking "Add" after editing a record would reopen the last edited entry instead of a blank form.
   - Affected modules: **Subscribers**, **IMS Subscribers**, **TFT**, **Charging Rules**, **Roaming: Networks**, **Roaming: Rules**
