@@ -48,3 +48,6 @@ Subscriber Wizard: Fixed issue where SQN (Sequence Number) was left NULL.
 EIR Support: Added initial support for Equipment Identity Register.
 
 OAM Deregistration on Disable: When a subscriber is changed to disabled and Save is clicked, the OAM Deregister API is triggered for that IMSI — effectively removing the device from the network.
+
+- Resolved issue where clicking "Add" after editing a record would reopen the last edited entry instead of a blank form.
+  - Affected modules: **Subscribers**, **IMS Subscribers**, **TFT**, **Charging Rules**, **Roaming: Networks**, **Roaming: Rules**
