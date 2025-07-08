@@ -16,9 +16,9 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/pages'),
     },
   },
-  server: {
-    host: '10.90.250.186',
-    port: 5173, // optional; defaults to 5173
-    https: false // optional; since you're using `basicSsl()`
-  }
+  //server: {
+  //  host: '10.90.250.186',
+  //  port: 5173, // optional; defaults to 5173
+  //  https: false // optional; since you're using `basicSsl()`
+ // }
 });

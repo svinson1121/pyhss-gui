@@ -49,9 +49,11 @@ const RoamingRule = () => {
   }
 
   const handleAdd = () => {
+    setEditMode(false);
     setOpenAdd(true);
   }
   const handleAddClose = () => {
+    setDialogData(roamingRuleTemplate);
     setOpenAdd(false);
     refresh();
   }

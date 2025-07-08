@@ -59,6 +59,7 @@ const IMSSubscriber = () => {
   }
 
   const handleAdd = () => {
+    setEditMode(false);
     setOpenAdd(true);
   }
   const handleAddClose = () => {

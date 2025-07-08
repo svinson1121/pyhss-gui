@@ -54,6 +54,7 @@ const ChargingRule = () => {
   }
 
   const handleAdd = () => {
+    setEditMode(false);
     setOpenAdd(true);
   }
   const handleAddClose = () => {

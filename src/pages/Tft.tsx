@@ -45,9 +45,11 @@ const Tft = () => {
   }
 
   const handleAdd = () => {
+    setEditMode(false);
     setOpenAdd(true);
   }
   const handleAddClose = () => {
+    setDialogData(tftTemplate);
     setOpenAdd(false);
     refresh();
   }

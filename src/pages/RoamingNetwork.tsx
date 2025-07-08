@@ -46,9 +46,11 @@ const RoamingNetwork = () => {
   }
 
   const handleAdd = () => {
+    setEditMode(false);
     setOpenAdd(true);
   }
   const handleAddClose = () => {
+    setDialogData(roamingNetworkTemplate);
     setOpenAdd(false);
     refresh();
   }
