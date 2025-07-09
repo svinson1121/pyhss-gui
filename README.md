@@ -40,7 +40,7 @@ ICCID Field: Enforced minimum length of 18 and maximum length of 20 characters.
 
 IMSI Field: Enforced fixed length of 15 digits.
 
-AMF Field: Corrected label to Authentication Management Field (thanks to @jmasterfunk).
+AMF Field: Corrected label to Authentication Management Field (thanks to @jmasterfunk84).
 
 Diameter Peers: Resolved issue with incorrect peer count; related API changes implemented.
 
