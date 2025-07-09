@@ -97,7 +97,7 @@ const TftGenerator = (props: {
               id="source"
               onChange={(name, value) => setSource(value)}
               value={source}
-            >Source (prefix or any)</InputField>
+            >Source IP (CIDR or any)+(port or range)</InputField>
           </Grid>
           <Grid item xs={3}>
             <InputField
@@ -106,7 +106,7 @@ const TftGenerator = (props: {
               id="destination"
               onChange={(name, value) => setDestination(value)}
               value={destination}
-            >Destination (prefix or any)</InputField>
+            >Dest IP (CIDR or any)+(port or range)</InputField>
           </Grid>
           <Grid item xs={2}>
             <SelectField
