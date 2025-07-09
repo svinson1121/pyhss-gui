@@ -22,12 +22,11 @@ const TftGenerator = (props: {
   const [selectedOption, setSelectedOption] = useState('');
 
   const generateFilter = () => {
-    const filterRule = `${action}${direction ? ' ' + direction : ''} ${protocol} from ${source} to ${destination}${selectedOption ? ' ' + selectedOption : ''}`;
+    const filterRule = `${action}${direction ? ' ' + direction : ''} ${protocol} from ${source} to ${destination}`;
     onGenerate(filterRule); 
   };
 
   const clearGenerator = () => {
-    setSelectedOption('');
     setDestination('');
     setSource('');
     setDirection('');
@@ -44,12 +43,12 @@ const TftGenerator = (props: {
       >
         <Grid container rowSpacing={1} spacing={1}>
           <Grid item xs={12}>&nbsp;</Grid>
-          <Grid item xs={10}><h3>TFT Generator</h3></Grid>
+          <Grid item xs={10}><h3>TFT Rule Generator</h3></Grid>
           <Grid item xs={2}>
             <Button onClick={clearGenerator}>Clear&nbsp; <i className="fas fa-broom"></i></Button>
             <Button onClick={generateFilter} variant="contained">Generate&nbsp;<i className="fas fa-arrow-up"></i></Button>
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={3}>
             <SelectField
               required
               value={action}
@@ -62,8 +61,9 @@ const TftGenerator = (props: {
               <MenuItem value="deny">deny</MenuItem>
             </SelectField> 
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={3}>
             <SelectField
+              required
               value={direction}
               onChange={(name, value) => setDirection(value)}
               id="direction"
@@ -75,7 +75,7 @@ const TftGenerator = (props: {
               <MenuItem value="out">out</MenuItem>
             </SelectField> 
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={3}>
             <SelectField
               required
               value={protocol}
@@ -90,37 +90,23 @@ const TftGenerator = (props: {
               <MenuItem value="1">icmp</MenuItem>
             </SelectField> 
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={5}>
             <InputField
               required
               label="Source"
               id="source"
               onChange={(name, value) => setSource(value)}
               value={source}
-            >Source IP (CIDR or any)+(port or range)</InputField>
+            >Source IP (CIDR or any)+(port or low-high port range)</InputField>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={5}>
             <InputField
               required
               label="Destination"
               id="destination"
               onChange={(name, value) => setDestination(value)}
               value={destination}
-            >Dest IP (CIDR or any)+(port or range)</InputField>
-          </Grid>
-          <Grid item xs={2}>
-            <SelectField
-              value={selectedOption}
-              onChange={(name, value) => setSelectedOption(value)}
-              id="selectedOption"
-              label="Options"
-              helper=""
-            >
-              <MenuItem value="">None</MenuItem>
-              <MenuItem value="frag">frag</MenuItem>
-              <MenuItem value="established">established</MenuItem>
-              <MenuItem value="setup">setup</MenuItem>
-            </SelectField> 
+            >Destination IP (CIDR or any)+(port or low-high port range)</InputField>
           </Grid>
         </Grid>
        </Box>

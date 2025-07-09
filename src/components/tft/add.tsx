@@ -95,7 +95,7 @@ const TftAddItem = (props: {
                 value={state.tft_string}
               >Rule</InputField>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={3}>
               <SelectField
                 value={state.direction}
                 onChange={handleChange}
