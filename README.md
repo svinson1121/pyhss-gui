@@ -53,4 +53,6 @@ OAM Deregistration on Disable: When a subscriber is changed to disabled and Save
 Resolved issue where clicking "Add" after editing a record would reopen the last edited entry instead of a blank form.
   - Affected modules: **Subscribers**, **IMS Subscribers**, **TFT**, **Charging Rules**, **Roaming: Networks**, **Roaming: Rules**
 
+Made changes to TFT Rule Generator.
+
 Switched Docker image from Apache (httpd:alpine) to NGINX (nginx:alpine) for better SPA support.
