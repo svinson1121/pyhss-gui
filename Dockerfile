@@ -11,6 +11,6 @@ FROM nginx:alpine
 # Copy custom NGINX config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Remove default nginx static files and add your app
+# Remove default nginx static files and add app
 RUN rm -rf /usr/share/nginx/html/*
 COPY --from=build /build/dist/ /usr/share/nginx/html
