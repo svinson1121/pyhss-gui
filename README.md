@@ -31,7 +31,7 @@ Your app is ready to be deployed!
 
 ## Tnx to
 * https://github.com/erdkse/adminlte-3-react (Providing the base and template)
-
+* Special thanks to Rudy (https://github.com/zarya) for his initial contributions to pyhss-gui.
 
 
 ## Bug Fixes & Updates:
