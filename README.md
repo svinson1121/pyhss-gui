@@ -8,6 +8,8 @@ After the container is started you can access the webinterface on port 8999 (htt
 ## Available Scripts
 
 In the project directory, you can run:
+### `npm install` 
+To download and install all project modules
 
 ### `npm run dev`
 
