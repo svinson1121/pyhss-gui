@@ -56,3 +56,6 @@ Resolved issue where clicking "Add" after editing a record would reopen the last
 Made changes to TFT Rule Generator.
 
 Switched Docker image from Apache (httpd:alpine) to NGINX (nginx:alpine) for better SPA support.
+
+Added a 10 Sec background refresh to the Dashboard data. 
+ 

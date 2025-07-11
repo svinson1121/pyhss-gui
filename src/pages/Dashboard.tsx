@@ -3,7 +3,6 @@ import React from 'react';
 import {ContentHeader} from '@components';
 import {NavLink} from 'react-router-dom';
 import i18n from '@app/utils/i18n';
-
 import {OamApi} from "../services/pyhss";
 
 const Dashboard = () => {
@@ -12,36 +11,56 @@ const Dashboard = () => {
   const [subsPcrf, setSubsPcrf] = React.useState("0");
   const [diameter, setDiameter] = React.useState("0");
 
+  const fetchData = () => {
+    const current = new Date();
+    
+    OamApi.servingSubs().then(data => {
+      setSubs(String(Object.values(data.data).filter(item =>
+        current - new Date(item.serving_mme_timestamp) < 60 * 60 * 1000
+      ).length));
+    });
+
+    OamApi.servingSubsIms().then(data => {
+      setSubsIms(String(Object.values(data.data).filter(item =>
+        current - new Date(item.pcscf_timestamp) < 60 * 60 * 1000
+      ).length));
+    });
+
+    OamApi.servingSubsPcrf().then(data => {
+      setSubsPcrf(String(Object.values(data.data).filter(item =>
+        current - new Date(item.serving_pgw_timestamp) < 60 * 60 * 1000
+      ).length));
+    });
+
+    OamApi.diameterPeers().then(data => {
+      setDiameter(String(Object.values(data.data).filter(item =>
+        item.LastDisconnectTimestamp === ""
+      ).length));
+    });
+  };
+
   React.useEffect(() => {
-    OamApi.servingSubs().then((data => {
-      const current = new Date;
-      setSubs(String(Object.values(data.data).filter(item => (current - new Date(item.serving_mme_timestamp) < 60 * 60 * 1000)).length));
-    }))
-    OamApi.servingSubsIms().then((data => {
-      const current = new Date;
-      setSubsIms(String(Object.values(data.data).filter(item => (current - new Date(item.pcscf_timestamp) < 60 * 60 * 1000)).length));
-    }))
-    OamApi.servingSubsPcrf().then((data => {
-      const current = new Date;
-      setSubsPcrf(String(Object.values(data.data).filter(item => (current - new Date(item.serving_pgw_timestamp) < 60 * 60 * 1000)).length));
-    }))
-    OamApi.diameterPeers().then((data => {
-      setDiameter(String(Object.values(data.data).filter(item => item.LastDisconnectTimestamp === "").length));
-    }))
+    // Fetch once on mount
+    fetchData();
+
+    // Set interval to fetch 
+    const interval = setInterval(fetchData, 10 * 1000);
+
+    // Clean up interval on unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div>
       <ContentHeader title="Dashboard" />
-
       <section className="content">
         <div className="container-fluid">
           <div className="row">
+            {/* Subscriber Box */}
             <div className="col-lg-3 col-6">
               <div className="small-box bg-success">
                 <div className="inner">
                   <h3>{subs}</h3>
-
                   <p>{i18n.t('dashboard.subscriberHeader')}</p>
                 </div>
                 <div className="icon">
@@ -52,11 +71,12 @@ const Dashboard = () => {
                 </NavLink>
               </div>
             </div>
+
+            {/* IMS Subscriber Box */}
             <div className="col-lg-3 col-6">
               <div className="small-box bg-warning">
                 <div className="inner">
                   <h3>{subsIms}</h3>
-
                   <p>{i18n.t('dashboard.imsSubscriberHeader')}</p>
                 </div>
                 <div className="icon">
@@ -67,11 +87,12 @@ const Dashboard = () => {
                 </NavLink>
               </div>
             </div>
+
+            {/* PCRF Subscriber Box */}
             <div className="col-lg-3 col-6">
               <div className="small-box bg-danger">
                 <div className="inner">
                   <h3>{subsPcrf}</h3>
-
                   <p>{i18n.t('dashboard.subscribersPCRFHeader')}</p>
                 </div>
                 <div className="icon">
@@ -79,11 +100,12 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
+
+            {/* Diameter Peers Box */}
             <div className="col-lg-3 col-6">
               <div className="small-box bg-danger">
                 <div className="inner">
                   <h3>{diameter}</h3>
-
                   <p>{i18n.t('dashboard.diameterPeersHeader')}</p>
                 </div>
                 <div className="icon">
