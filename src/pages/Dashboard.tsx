@@ -14,22 +14,14 @@ const Dashboard = () => {
   const fetchData = () => {
     const current = new Date();
     
-    OamApi.servingSubs().then(data => {
-      setSubs(String(Object.values(data.data).filter(item =>
-        current - new Date(item.serving_mme_timestamp) < 60 * 60 * 1000
-      ).length));
-    });
 
     OamApi.servingSubsIms().then(data => {
-      setSubsIms(String(Object.values(data.data).filter(item =>
-        current - new Date(item.pcscf_timestamp) < 60 * 60 * 1000
-      ).length));
+      setSubsIms(String(Object.values(data.data).length)); 
     });
 
     OamApi.servingSubsPcrf().then(data => {
-      setSubsPcrf(String(Object.values(data.data).filter(item =>
-        current - new Date(item.serving_pgw_timestamp) < 60 * 60 * 1000
-      ).length));
+      setSubsPcrf(String(Object.values(data.data).length)); 
+      setSubs(String(Object.values(data.data).length));
     });
 
     OamApi.diameterPeers().then(data => {
