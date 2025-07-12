@@ -60,4 +60,6 @@ Made changes to TFT Rule Generator.
 Switched Docker image from Apache (httpd:alpine) to NGINX (nginx:alpine) for better SPA support.
 
 Added a 10 Sec background refresh to the Dashboard data. 
- 
+
+Temp Fix for Dashboard Data, Subscribers is just a mirror of PCRF Subscribers for now.
+ - looking for a better way to collect just Subscribers online data.
