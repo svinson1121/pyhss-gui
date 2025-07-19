@@ -10,7 +10,7 @@ class RoamingNetworkApi {
   }
 
   create(data: object) {
-    return http.put("/roaming/network/", data);
+    return http.put(`/roaming/network/`, data);
   }
 
   update(id: number, data: object) {

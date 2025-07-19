@@ -5,6 +5,8 @@ import i18n from '@app/utils/i18n';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import {InputField, SelectField} from '@components';
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 import {RoamingNetworkApi} from '../../services/pyhss';
 
@@ -34,16 +36,9 @@ const RoamingRuleAddItem = (props: {
         [name]: value
     }));
   }
-
-  const onValidate = (field: string, value: string) => {
+  
+    const onValidate = (field: string, value: string) => {
     let error = ""
-    if (field==='imsi' && value === '')
-      error = i18n.t('validator.required');
-    else if (field==='imsi' && !/^\d*$/.test(value))
-      error = i18n.t('validator.onlyNumbers'); 
-    else if (field==='imsi' && value.length < 15)
-      error = i18n.t('validator.toShort');
-
     setError(field, error);
 
     if (error!=='' || Object.values(errors).filter((a)=>a!=='').length > 0)
@@ -51,6 +46,7 @@ const RoamingRuleAddItem = (props: {
     else
       onError(false);
   }
+
 
   const onChangeLocal = (name: string, value: string) => {
     onValidate(name, value);
@@ -64,41 +60,55 @@ const RoamingRuleAddItem = (props: {
     <React.Fragment>
             <Grid container spacing={1} rowSpacing={1}>
               <Grid item xs={3}>
-                <Autocomplete
-                  loading={networkLoading}
-                  onChange={(_event, value) => {
-                    if (value !== '') {
-                      onChangeNetwork(network.find(a => a.roaming_network_id === Number(value.split(" ")[0])));
-                    }
-                  }}
-                  value={(network.find(a => a.roaming_network_id === state.roaming_network_id) || {'name':''}).name}
-                  options={network.map((option) => `${option.roaming_network_id} ${option.name}`)}
-                  renderInput={(params) => <TextField {...params} label={`${i18n.t('generic.network')} ${errors.network}`} error={errors.network!==''} />}
+		{edit ? (
+  <TextField
+    label={i18n.t('generic.network')}
+    value={(network.find(a => a.roaming_network_id === state.roaming_network_id) || { name: '' }).name}
+    disabled
+  />
+) : (
+  <Autocomplete
+    loading={networkLoading}
+    onChange={(_event, value) => {
+      if (value !== '') {
+        onChangeNetwork(network.find(a => a.roaming_network_id === Number(value.split(" ")[0])));
+      }
+    }}
+    value={(network.find(a => a.roaming_network_id === state.roaming_network_id) || { name: '' }).name}
+    options={network.map((option) => `${option.roaming_network_id} ${option.name}`)}
+    renderInput={(params) => <TextField {...params} label={`${i18n.t('generic.network')} ${errors.network}`} error={errors.network !== ''} />}
+  />
+)}
+
+              </Grid>
+              <Grid item xs={3}>
+		<p>Roaming Allowed on this network?</p>
+		<FormControlLabel
+ 		 control={
+    		 <Checkbox
+ 		  checked={state.allow}
+    		  onChange={(e) => onChange('allow', e.target.checked)}
+     		  name="allow"
+    		  color="primary"
+    		 />
+  			}
+ 		 label={i18n.t('generic.allowed')}
+		/>
+              </Grid>
+              <Grid item xs={3}>
+		<p>Enable this Rule?</p>
+		 <FormControlLabel
+                 control={
+                 <Checkbox
+                  checked={state.enabled}
+                  onChange={(e) => onChange('enabled', e.target.checked)}
+                  name="enabled"
+                  color="primary"
+                 />
+                        }
+                 label={i18n.t('generic.enabled')}
                 />
-              </Grid>
-              <Grid item xs={3}>
-                <SelectField
-                  value={state.allow}
-                  onChange={onChange}
-                  id="allowed"
-                  label={i18n.t('generic.allowed')}
-                  helper={i18n.t('inputFields.desc.subscriberRoamingEnabled')}
-                >
-                  <MenuItem value={true}>{i18n.t('generic.yes')}</MenuItem>
-                  <MenuItem value={false}>{i18n.t('generic.no')}</MenuItem>
-                </SelectField>
-              </Grid>
-              <Grid item xs={3}>
-                <SelectField
-                  value={state.enabled}
-                  onChange={onChange}
-                  id="enabled"
-                  label={i18n.t('generic.enabled')}
-                  helper={i18n.t('inputFields.desc.subscriberRoamingEnabled')}
-                >
-                  <MenuItem value={true}>{i18n.t('generic.yes')}</MenuItem>
-                  <MenuItem value={false}>{i18n.t('generic.no')}</MenuItem>
-                </SelectField>
+
               </Grid>
             </Grid>
     </React.Fragment>

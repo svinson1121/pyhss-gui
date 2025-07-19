@@ -36,7 +36,7 @@ const steps = ['Add AUC', 'Add Subscriber', 'Add IMS Subscriber', 'Validate'];
 const subscriberTemplate = {
   "imsi": "",
   "enabled": true,
-  "auc_id": 0,
+  "auc_id": null,
   "default_apn": 1,
   "apn_list": "1",
   "msisdn": "",

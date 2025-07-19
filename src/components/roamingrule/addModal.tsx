@@ -32,21 +32,22 @@ const RoamingRuleAddModal = (props: { open: boolean, handleClose: any, data: obj
   React.useEffect(() => {
       setState(data);
   }, [data])
-
-  const handleChange = (name:string, value:string) => {
-    setState((prevState) => ({
-        ...prevState,
-        [name]: value
-    }));
+ 
+  const handleChange = (name: string, value: any) => {
+  setState((prevState) => ({
+    ...prevState,
+    [name]: value,
+  	}));
   };
+
 
   const handleSave = () => {
     if (edit) {
-      RoamingRuleApi.update(data.auc_id, state).then((data) => {
+      RoamingRuleApi.update(data.roaming_rule_id, state).then((data) => {
         handleLocalClose();
       }).catch(err => {
-        onError(err);
       })
+
     }else{
       RoamingRuleApi.create(state).then((data) => {
         handleLocalClose();
@@ -83,7 +84,7 @@ const RoamingRuleAddModal = (props: { open: boolean, handleClose: any, data: obj
           >
             <RoamingRuleAddItem onChange={handleChange} state={state} forceKeys={forceKeys} edit={edit} onError={handleError}/>
           </Box>
-          <SaveButtons onClickClose={handleLocalClose} onClickSave={handleSave} disabled={error}/>
+          <SaveButtons onClickClose={handleLocalClose} onClickSave={handleSave}/>
         </Box>
       </Modal>
     </React.Fragment>

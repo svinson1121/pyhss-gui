@@ -14,7 +14,7 @@ import Paper from '@mui/material/Paper';
 import i18n from '@app/utils/i18n';
 
 const roamingNetworkTemplate = {
-  "roaming_network_id": 0,
+  "roaming_network_id": null,
   "name": "",
   "preference": 0,
   "mcc": "",

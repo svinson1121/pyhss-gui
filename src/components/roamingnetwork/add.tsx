@@ -24,13 +24,6 @@ const RoamingNetworkAddItem = (props: {
 
   const onValidate = (field: string, value: string) => {
     let error = ""
-    if (field==='imsi' && value === '')
-      error = i18n.t('validator.required');
-    else if (field==='imsi' && !/^\d*$/.test(value))
-      error = i18n.t('validator.onlyNumbers'); 
-    else if (field==='imsi' && value.length < 15)
-      error = i18n.t('validator.toShort');
-
     setError(field, error);
 
     if (error!=='' || Object.values(errors).filter((a)=>a!=='').length > 0)

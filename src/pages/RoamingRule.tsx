@@ -14,8 +14,8 @@ import Paper from '@mui/material/Paper';
 import i18n from '@app/utils/i18n';
 
 const roamingRuleTemplate = {
-  "roaming_rule_id": 0,
-  "roaming_network_id": 0,
+  "roaming_rule_id": null,
+  "roaming_network_id": null,
   "allow": true,
   "enabled": true
 }

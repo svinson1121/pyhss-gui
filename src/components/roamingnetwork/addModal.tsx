@@ -42,7 +42,7 @@ const RoamingNetworkAddModal = (props: { open: boolean, handleClose: any, data: 
 
   const handleSave = () => {
     if (edit) {
-      RoamingNetworkApi.update(data.auc_id, state).then((data) => {
+      RoamingNetworkApi.update(data.roaming_network_id, state).then((data) => {
         handleLocalClose();
       }).catch(err => {
         onError(err);
