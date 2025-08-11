@@ -66,3 +66,5 @@ Temp Fix for Dashboard Data, Subscribers is just a mirror of PCRF Subscribers fo
 
 Fixed issue: Bugs in Roaming Networks and Rules. #3
 
+Removed  SGW-C and PGW-C as a required field in the APN section. 
+

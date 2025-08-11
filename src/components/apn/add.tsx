@@ -110,7 +110,6 @@ const ApnAddItem = (props: { open: ReturnType<typeof Boolean>, handleClose: Retu
             <Grid item xs={12}><h3>{i18n.t('apn.gatewayHead')}</h3></Grid>
             <Grid item xs={6}>
               <InputField
-                required
                 value={state.pgw_address}
                 onChange={handleChange}
                 id="pgw_address"
@@ -121,7 +120,6 @@ const ApnAddItem = (props: { open: ReturnType<typeof Boolean>, handleClose: Retu
             </Grid>
             <Grid item xs={6}>
               <InputField
-                required
                 value={state.sgw_address}
                 onChange={handleChange}
                 id="sgw_address"
