@@ -231,7 +231,9 @@
         "niddMechanism": "Mechanism used to transfer Non-IP-Data",
         "niddPreferredDataMode": "Preferred-Data-Mode",
         "niddRds": "Indicates if Reliable Data Service is enabled or disabled",
-        "preference": "Rule preference lower is more prefered"
+        "preference": "Rule preference lower is more prefered",
+	"tftGroup": "TFT Group to Match",
+	"ratingGroup": "Rating Group for this Rule" 
     },
     "options": {
       "nam": {
