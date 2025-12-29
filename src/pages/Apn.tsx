@@ -16,8 +16,8 @@ import i18n from '@app/utils/i18n';
 const apnTemplate = {
   "apn": "",
   "ip_version": 0,
-  "pgw_address": "",
-  "sgw_address": "",
+  "pgw_address": null,
+  "sgw_address": null,
   "charging_characteristics": "0800",
   "apn_ambr_dl": 0,
   "apn_ambr_ul": 0,
@@ -25,7 +25,7 @@ const apnTemplate = {
   "arp_priority": 8,
   "arp_preemption_capability": false,
   "arp_preemption_vulnerability": false,
-  "charging_rule_list": "",
+  "charging_rule_list": null,
   "nbiot": false
 }
 

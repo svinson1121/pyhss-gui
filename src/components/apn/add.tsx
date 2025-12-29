@@ -40,13 +40,30 @@ const ApnAddItem = (props: { open: ReturnType<typeof Boolean>, handleClose: Retu
     }));
   };
 
+const normalizePayload = (payload: any) => {
+    const normalized = { ...payload };
+
+    [
+      'pgw_address',
+      'sgw_address',
+    ].forEach((key) => {
+      if (normalized[key] === '') {
+        normalized[key] = null;
+      }
+    });
+
+    return normalized;
+  };
+
   const handleSave = () => {
+    const payload = normalizePayload(state);
+
     if (edit) {
-      ApnApi.update(data.apn_id, state).then(() => {
+      ApnApi.update(data.apn_id, payload).then(() => {
         handleClose();
       })
     } else {
-      ApnApi.create(state).then(() => {
+      ApnApi.create(payload).then(() => {
         handleClose();
       })
     }
@@ -110,7 +127,6 @@ const ApnAddItem = (props: { open: ReturnType<typeof Boolean>, handleClose: Retu
             <Grid item xs={12}><h3>{i18n.t('apn.gatewayHead')}</h3></Grid>
             <Grid item xs={6}>
               <InputField
-		required
                 value={state.pgw_address}
                 onChange={handleChange}
                 id="pgw_address"

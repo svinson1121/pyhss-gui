@@ -68,3 +68,5 @@ Fixed issue: Bugs in Roaming Networks and Rules. #3
 
 Removed  SGW-C as a required field in the APN section. 
 
+fixed bug #6 (Bug in APN PGW and SGW), Removed PGW-C as a required field in the APN section, bumped version to 0.1.4
+
